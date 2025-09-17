@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Excel Engineering College</h1>
+    </header>
+
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="message">{{ messages[0] }}</div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('register') }}" method="POST">
+
+            <div class="form">
+                <label>First Name:</label>
+                <input type="text" name="first_name" required>
+            </div>
+
+            <div class="form">
+                <label>Last Name:</label>
+                <input type="text" name="last_name" required>
+            </div>
+
+            <div class="form">
+                <label>Date of Birth:</label>
+                <input type="date" name="dob" required>
+            </div>
+
+            <div class="form">
+                <label>Mobile No:</label>
+                <input type="text" name="mobile" required>
+            </div>
+
+            <div class="form">
+                <label>Email ID:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                </div>
+            </div>
+
+            <div class="form">
+                <label>Department:</label>
+                <select name="department" required>
+                    <option value="">--Select Department--</option>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                    <option value="AIDS">AIDS</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Mechanical">Mechanical</option>
+
+                </select>
+            </div>
+
+            <div class="form">
+                <label>Courses:</label>
+                <select name="course" required>
+                    <option value="">--Select Course--</option>
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="AI">AI</option>
+                    <option value="ML">ML</option>
+                    <option value="DS">DS</option>
+                    <option value="Cloud">Cloud</option>
+                    <option value="CAD/CAM">CAD/CAM</option>
+                    <option value="IoT">IoT</option>
+
+                </select>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn">Submit</button>
+                <button type="reset" class="btn reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
