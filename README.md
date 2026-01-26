@@ -25,8 +25,3 @@ This project is a *Student Registration System* developed using:
 - students.xlsx → Excel sheet for storing data
 - index.html → Frontend page
 - style.css → Styling for frontend
-
-#▶ How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Student_Registration.git
