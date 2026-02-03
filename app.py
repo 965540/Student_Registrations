@@ -51,10 +51,10 @@ def register():
         sheet.append([fname,lname,dob,phone,email,gender,department,course])
         wb.save("students.xlsx")
 
-        flash("✅ Registration Successful!", "success")
+        flash("Registration Successful!", "success")
 
     except mysql.connector.IntegrityError:
-        flash("❌ Email already registered!", "error")
+        flash("Email already registered!", "error")
 
     except mysql.connector.Error as err:
         flash(f"Database Error: {err}", "error")
